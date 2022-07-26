@@ -15,7 +15,7 @@ public class Cliente extends Pessoa implements Cadastrar_Listar {
     @Override
     public void cadastrar() {
         System.out.println("-------------------------------------");
-        System.out.print("Informações de cadastro - Cliente\n");
+        System.out.print("Informaï¿½ï¿½es de cadastro - Cliente\n");
         System.out.println("-------------------------------------");
         System.out.print("Informe o seu nome: ");
         String nome = input.next();
@@ -29,28 +29,18 @@ public class Cliente extends Pessoa implements Cadastrar_Listar {
 
     @Override
     public void listar() {
-<<<<<<< HEAD
-
 
         for (int i = 0; i < listaDeClientes.size(); i++) {
             System.out.println(listaDeClientes.get(i).getNome());
             System.out.println(listaDeClientes.get(i).getEmail());
             System.out.println(listaDeClientes.get(i).getCpf());
         }
+    }
 
-=======
-        for (int i = 0; i < listaDeClientes.size(); i++) {
-            System.out.println(listaDeClientes.get(i).getNome());
-            System.out.println(listaDeClientes.get(i).getEmail());
-            System.out.println(listaDeClientes.get(i).getCpf());
+     public Cliente(String nome, String cpf, String email) {
+            super(nome, cpf, email);
         }
 
->>>>>>> 6fcffec3aa7fe16460971b674feaad3ef3ad9cdc
+
     }
 
-    public Cliente(String nome, String cpf, String email) {
-        super(nome, cpf, email);
-    }
-
-
-}
