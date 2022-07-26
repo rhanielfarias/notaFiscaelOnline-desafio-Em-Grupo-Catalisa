@@ -1,4 +1,4 @@
-public class Cliente extends Pessoa implements Cadastrar_Listar{
+public class Vendedor extends Pessoa implements Cadastrar_Listar{
 
     @Override
     public void cadastrar() {
@@ -10,11 +10,7 @@ public class Cliente extends Pessoa implements Cadastrar_Listar{
 
     }
 
-    public Cliente(String nome, String cpf, String email) {
+    public Vendedor(String nome, String cpf, String email) {
         super(nome, cpf, email);
     }
-
-
-
-
 }
