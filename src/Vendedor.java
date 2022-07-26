@@ -14,7 +14,9 @@ public class Vendedor extends Pessoa implements Cadastrar_Listar {
 
     @Override
     public void cadastrar() {
-        System.out.print("CADASTRO VENDEDOR\n");
+        System.out.println("-------------------------------------");
+        System.out.print("Informações de cadastro - Vendedor\n");
+        System.out.println("-------------------------------------");
         System.out.print("Informe seu nome: ");
         String nome = input.next();
         System.out.print("Informe seu e-mail: ");
@@ -29,7 +31,11 @@ public class Vendedor extends Pessoa implements Cadastrar_Listar {
 
     @Override
     public void listar() {
-
+        for(Vendedor listaDeVendor : listaDeVendedores){
+            System.out.println(listaDeVendor.getNome());
+            System.out.println(listaDeVendor.getCpf());
+            System.out.println(listaDeVendor.getEmail());
+        }
     }
 
     public Vendedor(String nome, String cpf, String email) {
