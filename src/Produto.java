@@ -1,20 +1,12 @@
-public class Produto extends Vendas{
+public abstract class Produto{
 
-    private String nome;
+
     private double valorProduto;
+    private String nomeDoProduto;
 
-    public Produto(String dataRegistro, String nome, double valorProduto) {
-        super(dataRegistro);
-        this.nome = nome;
+    public Produto(double valorProduto, String nomeDoProduto) {
         this.valorProduto = valorProduto;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        this.nomeDoProduto = nomeDoProduto;
     }
 
     public double getValorProduto() {
@@ -23,5 +15,13 @@ public class Produto extends Vendas{
 
     public void setValorProduto(double valorProduto) {
         this.valorProduto = valorProduto;
+    }
+
+    public String getNomeDoProduto() {
+        return nomeDoProduto;
+    }
+
+    public void setNomeDoProduto(String nomeDoProduto) {
+        this.nomeDoProduto = nomeDoProduto;
     }
 }
