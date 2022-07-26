@@ -31,12 +31,14 @@ public class Vendedor extends Pessoa implements Cadastrar_Listar {
 
     @Override
     public void listar() {
-        for(Vendedor listaDeVendor : listaDeVendedores){
-            System.out.println(listaDeVendor.getNome());
-            System.out.println(listaDeVendor.getCpf());
-            System.out.println(listaDeVendor.getEmail());
+        for (int i = 0; i < listaDeVendedores.size(); i++) {
+            System.out.println(listaDeVendedores.get(i).getNome());
+            System.out.println(listaDeVendedores.get(i).getEmail());
+            System.out.println(listaDeVendedores.get(i).getCpf());
         }
+
     }
+
 
     public Vendedor(String nome, String cpf, String email) {
         super(nome, cpf, email);

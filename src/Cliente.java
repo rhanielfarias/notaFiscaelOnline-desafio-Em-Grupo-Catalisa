@@ -29,11 +29,12 @@ public class Cliente extends Pessoa implements Cadastrar_Listar {
 
     @Override
     public void listar() {
-        for (Cliente listaDeCliente : listaDeClientes) {
-            System.out.println(listaDeCliente.getNome());
-            System.out.println(listaDeCliente.getEmail());
-            System.out.println(listaDeCliente.getCpf());
+        for (int i = 0; i < listaDeClientes.size(); i++) {
+            System.out.println(listaDeClientes.get(i).getNome());
+            System.out.println(listaDeClientes.get(i).getEmail());
+            System.out.println(listaDeClientes.get(i).getCpf());
         }
+
     }
 
     public Cliente(String nome, String cpf, String email) {
