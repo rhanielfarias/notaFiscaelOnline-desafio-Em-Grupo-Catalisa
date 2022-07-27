@@ -1,7 +1,7 @@
 public abstract class Usuario {
     private String nome;
-    private String cpf;
     private String email;
+    private String cpf;
 
     public Usuario() {
 
@@ -9,8 +9,8 @@ public abstract class Usuario {
 
     public Usuario(String nome, String email, String cpf) {
         this.nome = nome;
-        this.cpf = cpf;
         this.email = email;
+        this.cpf = cpf;
     }
 
 

@@ -14,7 +14,7 @@ public class Main {
 
             System.out.println("Digite o número [1] - Para cadastrar um vendedor");
             System.out.println("Digite o número [2] - Para cadastrar cliente");
-            System.out.println("Digite o número [3] - Para cadastrar a venda");
+            System.out.println("Digite o número [3] - Para cadastrar uma venda");
             System.out.println("Digite o número [4] - Para exibir os vendedores cadastrados");
             System.out.println("Digite o número [5] - Para exibir os clientes cadastrados");
             System.out.println("Digite o número [6] - Para exibir vendas cadastradas");
@@ -24,15 +24,33 @@ public class Main {
             int opcao = input.nextInt();
             switch (opcao) {
                 case 1:
-
-                    controleRegistro.cadastrarVendedor();
+                    System.out.println("\n-------------------------------------");
+                    System.out.print("Informações de cadgitastro - Vendedor\n");
+                    System.out.println("-------------------------------------");
+                    System.out.print("Informe seu nome: ");
+                    String nomeDoVendedor = input.next();
+                    System.out.print("Informe seu e-mail: ");
+                    String emailDoVendedor = input.next();
+                    System.out.print("Informe seu cpf: ");
+                    String cpfDoVendedor = input.next();
+                    System.out.println();
+                    controleRegistro.cadastrarVendedor(nomeDoVendedor,emailDoVendedor,cpfDoVendedor);
                     break;
                 case 2:
-
-                    controleRegistro.cadastrarCliente();
+                    System.out.println("\n-------------------------------------");
+                    System.out.print("Informações de cadastro - Cliente\n");
+                    System.out.println("-------------------------------------");
+                    System.out.print("Informe seu nome: ");
+                    String nomeCliente = input.next();
+                    System.out.print("Informe seu e-mail: ");
+                    String emailCliente = input.next();
+                    System.out.print("Informe seu cpf: ");
+                    String cpfCliente = input.next();
+                    System.out.println();
+                    controleRegistro.cadastrarCliente(nomeCliente,emailCliente,cpfCliente);
                     break;
                 case 3:
-                    //System.out.print("Informe seu cpf: ");
+                    System.out.print("Informe seu Cpf: ");
                     controleRegistro.cadastrarVenda();
                     break;
                 case 4:

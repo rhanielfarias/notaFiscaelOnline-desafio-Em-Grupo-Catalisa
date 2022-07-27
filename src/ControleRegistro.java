@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,20 +9,12 @@ public class ControleRegistro {
     List<Vendas> listaDeVendas = new ArrayList<>();
     Scanner input = new Scanner(System.in);
 
-    public void cadastrarVendedor() {
-        System.out.println("\n-------------------------------------");
-        System.out.print("Informações de cadastro - Vendedor\n");
-        System.out.println("-------------------------------------");
-        System.out.print("Informe seu nome: ");
-        String nomeVendedor = input.next();
-        System.out.print("Informe seu e-mail: ");
-        String emailVendedor = input.next();
-        System.out.print("Informe seu cpf: ");
-        String cpfVendedor = input.next();
-        System.out.println();
+    public void cadastrarVendedor(String nomeDoVendedor, String emailDoVendedor, String cpfDoVendedor) {
 
-        if (!procurarCpf(listaDeVendedores, cpfVendedor)) {
-            Usuario vendedor = new Vendedor(nomeVendedor, emailVendedor, cpfVendedor);
+
+        Boolean cpfExistente = procurarCpf(listaDeVendedores, cpfDoVendedor);
+        if (Boolean.FALSE.equals(cpfExistente)) { // se cpf existente for igual a false
+            Usuario vendedor = new Vendedor(nomeDoVendedor, emailDoVendedor, cpfDoVendedor);
             listaDeVendedores.add(vendedor);
             System.out.println("O seu cadastrado foi efetuado com sucesso.\n");
         } else {
@@ -31,27 +23,18 @@ public class ControleRegistro {
     }
 
     public void listarVendedor() {
-        for (int i = 0; i < listaDeVendedores.size(); i++) {
-            System.out.println("Nome do vendedor: " + listaDeVendedores.get(i).getNome());
-            System.out.println("E-mail do vendedor: " + listaDeVendedores.get(i).getEmail());
-            System.out.println("Cpf do vendedor: " + listaDeVendedores.get(i).getCpf());
+        for (Usuario listaVendedores : listaDeVendedores) {
+            System.out.println("Nome do vendedor: " + listaVendedores.getNome());
+            System.out.println("E-mail do vendedor: " + listaVendedores.getEmail());
+            System.out.println("Cpf do vendedor: " + listaVendedores.getCpf());
             System.out.println();
         }
     }
 
-    public void cadastrarCliente() {
-        System.out.println("\n-------------------------------------");
-        System.out.print("Informações de cadastro - Cliente\n");
-        System.out.println("-------------------------------------");
-        System.out.print("Informe seu nome: ");
-        String nomeCliente = input.next();
-        System.out.print("Informe seu e-mail: ");
-        String emailCliente = input.next();
-        System.out.print("Informe seu cpf: ");
-        String cpfCliente = input.next();
-        System.out.println();
+    public void cadastrarCliente(String nomeCliente, String emailCliente, String cpfCliente) {
 
-        if (!procurarCpf(listaDeClientes, cpfCliente)) {
+        Boolean cpfExistenteCliente = procurarCpf(listaDeClientes, cpfCliente);
+        if (Boolean.FALSE.equals(cpfExistenteCliente)) {
             Usuario cliente = new Cliente(nomeCliente, emailCliente, cpfCliente);
             listaDeClientes.add(cliente);
             System.out.println("O seu cadastrado foi efetuado com sucesso.\n");
@@ -61,19 +44,18 @@ public class ControleRegistro {
     }
 
     public void listarClientes() {
-        for (int i = 0; i < listaDeClientes.size(); i++) {
-            System.out.println("Nome do cliente: " + listaDeClientes.get(i).getNome());
-            System.out.println("E-mail do cliente: " + listaDeClientes.get(i).getEmail());
-            System.out.println("Cpf do cliente: " + listaDeClientes.get(i).getCpf());
+        for (Usuario listaDeCliente : listaDeClientes) {
+            System.out.println("Nome do cliente: " + listaDeCliente.getNome());
+            System.out.println("E-mail do cliente: " + listaDeCliente.getEmail());
+            System.out.println("Cpf do cliente: " + listaDeCliente.getCpf());
             System.out.println();
         }
     }
 
-
     public void cadastrarVenda() {
-        System.out.println();
+
         String cpf = input.nextLine();
-        if (!procurarCpf(listaDeVendedores, cpf) || !procurarCpf(listaDeClientes, cpf)) {
+        if (procurarCpf(listaDeVendedores, cpf) || procurarCpf(listaDeClientes, cpf)) {
             System.out.print("Informe a data de registro da venda: ");
             String dataRegistroDoProduto = input.next();
             System.out.print("Informe o valor: ");
@@ -81,30 +63,40 @@ public class ControleRegistro {
             System.out.println();
             Vendas vendas = new Vendas(dataRegistroDoProduto, valorVendaDoProduto);
             listaDeVendas.add(vendas);
-
-            System.out.print("Deseja cadastrar mais alguma venda? ([1] - sim / [2] - não): ");
-            int respostaDoUsuariaro = input.nextInt();
-
-            if (respostaDoUsuariaro == 1) {// respostaDoUsuariaro ==
-                cadastrarVenda();
-            } else {
-                System.out.println("Nenhuma venda a cadastrar ");
-            }
-
         } else {
             System.out.println("ERRO: Cpf não cadastrado. Favor realizar o seu cadastro.");
         }
     }
 
+
+    /* public void cadastrarVenda() {
+         System.out.println();
+         String cpf = input.next();
+         if (!procurarCpf(listaDeVendedores, cpf) || !procurarCpf(listaDeClientes, cpf)) {
+           // System.out.print("Informe o seu cpf: ");
+            // String teste = input.next();
+             System.out.print("Informe a data de registro da venda: ");
+             String dataRegistroDoProduto = input.next();
+             System.out.print("Informe o valor: ");
+             double valorVendaDoProduto = input.nextDouble();
+             System.out.println();
+             Vendas vendas = new Vendas(dataRegistroDoProduto, valorVendaDoProduto);
+             listaDeVendas.add(vendas);
+
+         } else {
+             System.out.println("ERRO: Cpf não cadastrado. por favor realize o seu cadastro.");
+         }
+     }
+ */
     public void listarVendas() {
-        for (int i = 0; i < listaDeVendas.size(); i++) {
-            System.out.println("Data de registro da venda: " + listaDeVendas.get(i).getDataRegistro());
-            System.out.println("Valor do produto: " + listaDeVendas.get(i).getValorVenda());
+        for (Vendas listaDeVenda : listaDeVendas) {
+            System.out.println("Data de registro da venda: " + listaDeVenda.getDataRegistro());
+            System.out.println("Valor do produto: " + listaDeVenda.getValorVenda());
             System.out.println();
         }
     }
 
-    public boolean procurarCpf(List<Usuario> listaUsuarios, String cpf) {
+    public Boolean procurarCpf(List<Usuario> listaUsuarios, String cpf) {
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getCpf().equals(cpf)) {
                 return true;
