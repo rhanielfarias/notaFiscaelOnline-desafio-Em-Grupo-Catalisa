@@ -24,12 +24,15 @@ public class Main {
             int opcao = input.nextInt();
             switch (opcao) {
                 case 1:
+
                     controleRegistro.cadastrarVendedor();
                     break;
                 case 2:
+
                     controleRegistro.cadastrarCliente();
                     break;
                 case 3:
+                    //System.out.print("Informe seu cpf: ");
                     controleRegistro.cadastrarVenda();
                     break;
                 case 4:
