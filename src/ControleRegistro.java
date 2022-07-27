@@ -3,15 +3,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-    public  class ControleRegistro {
+public class ControleRegistro {
     List<Usuario> listaDeVendedores = new ArrayList<>();
     List<Usuario> listaDeClientes = new ArrayList<>();
     List<Vendas> listaDeVendas = new ArrayList<>();
-Scanner  input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
     public void cadastrarVendedor() {
-        System.out.println("-------------------------------------");
-        System.out.print("Informaï¿½ï¿½es de cadastro - Vendedor\n");
+        System.out.println("\n-------------------------------------");
+        System.out.print("Informações de cadastro - Vendedor\n");
         System.out.println("-------------------------------------");
         System.out.print("Informe seu nome: ");
         String nome = input.nextLine();
@@ -19,16 +19,16 @@ Scanner  input = new Scanner(System.in);
         String email = input.nextLine();
         System.out.print("Informe seu cpf: ");
 
-String cpf = input.nextLine();
+
+        String cpf = input.nextLine();
         if (!procurarCpf(listaDeVendedores, cpf)) {
             Usuario vendedor = new Vendedor(nome, email, cpf);
             listaDeVendedores.add(vendedor);
-        }
-        else {
-            System.out.println("ERRO: Este vendedor jÃ¡ estÃ¡ cadastrado.");
+            System.out.println("O seu cadastrado foi efetuado com sucesso.");
+        } else {
+            System.out.println("ERRO: Vendedor(a) já cadastrado(a).");
         }
     }
-
 
 
     public void listarVendedor() {
@@ -37,11 +37,11 @@ String cpf = input.nextLine();
             System.out.println(listaDeVendedores.get(i).getEmail());
             System.out.println(listaDeVendedores.get(i).getCpf());
         }
-}
+    }
 
     public void cadastrarCliente() {
-        System.out.println("-------------------------------------");
-        System.out.print("Informaï¿½ï¿½es de cadastro - Cliente\n");
+        System.out.println("\n-------------------------------------");
+        System.out.print("Informações de cadastro - Cliente\n");
         System.out.println("-------------------------------------");
         System.out.print("Informe seu nome: ");
         String nome = input.nextLine();
@@ -49,12 +49,11 @@ String cpf = input.nextLine();
         String email = input.nextLine();
         System.out.print("Informe seu cpf: ");
         String cpf = input.nextLine();
-        if (!procurarCpf(listaDeClientes, cpf)) {
+        if (procurarCpf(listaDeClientes, cpf)) {
             Usuario cliente = new Cliente(nome, email, cpf);
             listaDeClientes.add(cliente);
-        }
-        else {
-            System.out.println("ERRO: Este cliente jÃ¡ estÃ¡ cadastrado.");
+        } else {
+            System.out.println("ERRO: Cliente já cadastrado(a)");
         }
     }
 
@@ -62,15 +61,14 @@ String cpf = input.nextLine();
         System.out.print("Informe seu cpf: ");
         String cpf = input.nextLine();
         if (procurarCpf(listaDeVendedores, cpf)) {
-System.out.println("Informe a data de registro do produto");
-String dataRegistro = input.nextLine();
-System.out.println("Informe o valor");
-double valorVenda = input.nextDouble();
-Vendas vendas = new Vendas(dataRegistro, valorVenda);
+            System.out.println("Informe a data de registro do produto");
+            String dataRegistro = input.nextLine();
+            System.out.println("Informe o valor");
+            double valorVenda = input.nextDouble();
+            Vendas vendas = new Vendas(dataRegistro, valorVenda);
             listaDeVendas.add(vendas);
-        }
-        else {
-            System.out.println("ERRO: CPF não reconhecido");
+        } else {
+            System.out.println("ERRO: Cpf não reconhecido");
         }
     }
 
@@ -82,7 +80,6 @@ Vendas vendas = new Vendas(dataRegistro, valorVenda);
         }
         return false;
     }
-
 
 
 }
