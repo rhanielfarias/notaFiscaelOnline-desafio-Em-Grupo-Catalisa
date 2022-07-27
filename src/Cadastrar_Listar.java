@@ -1,8 +1,10 @@
 public interface Cadastrar_Listar {
 
-    public void cadastrar();
+    public void cadastrarVendedor();
+    public void cadastrarCliente();
 
-    public void listar();
+    public void listarCliente();
+    public void listarVendedor();
 
 
 }
