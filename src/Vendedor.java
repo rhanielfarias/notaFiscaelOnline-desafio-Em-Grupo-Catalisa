@@ -7,4 +7,6 @@ public class Vendedor extends Usuario {
     public Vendedor(String nome, String email, String cpf) {
         super(nome, cpf, email);
     }
+
+
 }
