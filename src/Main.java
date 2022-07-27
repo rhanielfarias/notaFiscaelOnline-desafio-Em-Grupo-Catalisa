@@ -8,7 +8,7 @@ public class Main {
         ControleRegistro vendas = new ControleRegistro();
 
         while (continuar) {
-            System.out.println("-------------------------------------");
+            System.out.println("------------------------------------- ");
             System.out.println("Bem-vindo(a) ao menu de registro de vendas.");
             System.out.println("-------------------------------------");
             System.out.println("Digite o número [1] - Para cadastrar uma venda");
