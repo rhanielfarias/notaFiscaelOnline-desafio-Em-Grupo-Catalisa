@@ -10,7 +10,7 @@ public class ControleRegistro {
 
     public void cadastrarVendedor() {
         System.out.println("\n-------------------------------------");
-        System.out.print("Informa√ß√µes de cadastro - Vendedor\n");
+        System.out.print("InformaÁıes de cadastro - Vendedor\n");
         System.out.println("-------------------------------------");
         System.out.print("Informe seu nome: ");
         String nomeVendedor = input.nextLine();
@@ -25,7 +25,7 @@ public class ControleRegistro {
             listaDeVendedores.add(vendedor);
             System.out.println("O seu cadastrado foi efetuado com sucesso.\n");
         } else {
-            System.out.println("ERRO: Vendedor(a) j√° cadastrado(a).");
+            System.out.println("ERRO: Vendedor(a) j· cadastrado(a).");
         }
     }
 
@@ -40,7 +40,7 @@ public class ControleRegistro {
 
     public void cadastrarCliente() {
         System.out.println("\n-------------------------------------");
-        System.out.print("Informa√ß√µes de cadastro - Cliente\n");
+        System.out.print("InformaÁıes de cadastro - Cliente\n");
         System.out.println("-------------------------------------");
         System.out.print("Informe seu nome: ");
         String nomeCliente = input.nextLine();
@@ -56,7 +56,7 @@ public class ControleRegistro {
             listaDeClientes.add(cliente);
             System.out.println("O seu cadastrado foi efetuado com sucesso.\n");
         } else {
-            System.out.println("ERRO: Cliente j√° cadastrado(a).");
+            System.out.println("ERRO: Cliente j· cadastrado(a).");
         }
     }
 
@@ -82,7 +82,7 @@ public class ControleRegistro {
             Vendas vendas = new Vendas(dataRegistroDoProduto, valorVendaDoProduto);
             listaDeVendas.add(vendas);
 
-            System.out.print("Deseja cadastrar mais alguma venda? ([1] - sim / [2] - n√£o): ");
+            System.out.print("Deseja cadastrar mais alguma venda? ([1] - sim / [2] - n„o): ");
             int respostaDoUsuariaro = input.nextInt();
 input.nextLine();
             if (respostaDoUsuariaro == 1) {// respostaDoUsuariaro ==
@@ -92,7 +92,7 @@ input.nextLine();
             }
 
         } else {
-            System.out.println("ERRO: Cpf n√£o cadastrado. Favor realizar o seu cadastro.");
+            System.out.println("ERRO: Cpf n„o cadastrado. Favor realizar o seu cadastro.");
         }
     }
 
