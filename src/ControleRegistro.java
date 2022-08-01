@@ -84,7 +84,7 @@ public class ControleRegistro {
 
             System.out.print("Deseja cadastrar mais alguma venda? ([1] - sim / [2] - não): ");
             int respostaDoUsuariaro = input.nextInt();
-input.nextLine();
+            input.nextLine();
             if (respostaDoUsuariaro == 1) {// respostaDoUsuariaro ==
                 cadastrarVenda();
             } else {
