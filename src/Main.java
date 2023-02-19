@@ -18,7 +18,8 @@ public class Main {
             System.out.println("Digite o número [4] - Para exibir os vendedores cadastrados");
             System.out.println("Digite o número [5] - Para exibir os clientes cadastrados");
             System.out.println("Digite o número [6] - Para exibir vendas cadastradas");
-            System.out.println("Digite o número [7] - Para sair do sistema de registro\n");
+            System.out.println("Digite o número [7] para buscar vendas por CPF");
+            System.out.println("Digite o número [8] - Para sair do sistema de registro\n");
 
             System.out.print("Informe um número e execute uma das opções apresentadas: ");
             int opcao = input.nextInt();
@@ -51,6 +52,9 @@ public class Main {
                     controleRegistro.listarVendas();
                     break;
                 case 7:
+                    controleRegistro.buscarPorCpf();
+                    break;
+                case 8:
                     continuar = false;
                     System.out.println("Ok, saindo do sistema de registro... ");
                     break;

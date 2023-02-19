@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ControleRegistro {
     List<Usuario> listaDeVendedores = new ArrayList<>();
     List<Usuario> listaDeClientes = new ArrayList<>();
-    List<Vendas> listaDeVendas = new ArrayList<>();
+        List<Vendas> listaDeVendas = new ArrayList<>();
+    List<Usuario> listaDeCpf = new ArrayList<>();
     Scanner input = new Scanner(System.in);
 
     public void cadastrarVendedor() {
@@ -81,7 +82,9 @@ public class ControleRegistro {
             System.out.println();
             Vendas vendas = new Vendas(dataRegistroDoProduto, valorVendaDoProduto);
             listaDeVendas.add(vendas);
-
+Usuario cpfDoVendedor = new Vendedor();
+cpfDoVendedor.setCpf(cpf);
+            listaDeCpf.add(cpfDoVendedor);
             System.out.print("Deseja cadastrar mais alguma venda? ([1] - sim / [2] - não): ");
             int respostaDoUsuariaro = input.nextInt();
             input.nextLine();
@@ -104,6 +107,17 @@ public class ControleRegistro {
         }
     }
 
+    public  void  buscarPorCpf() {
+        System.out.println("Informe o seu cpf:");
+        String cpf = input.nextLine();
+        for (int i = 0; i < listaDeCpf.size(); i++) {
+            Usuario listinha = listaDeCpf.get(i);
+            if (cpf.equals(listinha.getCpf())) {
+                System.out.println(listaDeVendas.get(i).getDataRegistro());
+            } else
+                System.out.println("Não achei");
+        }
+        }
     public boolean procurarCpf(List<Usuario> listaUsuarios, String cpf) {
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getCpf().equals(cpf)) {

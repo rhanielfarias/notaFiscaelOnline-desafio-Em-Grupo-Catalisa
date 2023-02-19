@@ -2,6 +2,7 @@ public class Vendas {
 
     private String dataRegistro;
     private double valorVenda;
+private  String cpf;
 
     public Vendas(String dataRegistro, double valorVenda) {
         this.dataRegistro = dataRegistro;
